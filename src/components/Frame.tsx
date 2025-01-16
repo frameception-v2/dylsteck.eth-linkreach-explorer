@@ -118,6 +118,25 @@ export default function Frame(
     >
       <div className="w-[300px] mx-auto py-2 px-2">
         <h1 className="text-2xl font-bold text-center mb-4">{title}</h1>
+        
+        <div className="space-y-2">
+          {SOCIAL_LINKS.map((link) => (
+            <PurpleButton
+              key={link.name}
+              className="w-full flex items-center justify-between"
+              onClick={() => sdk.actions.openUrl(link.url)}
+            >
+              <span>{link.icon} {link.name}</span>
+              <span>→</span>
+            </PurpleButton>
+          ))}
+        </div>
+
+        {context?.client.added && (
+          <div className="mt-4 text-center text-sm text-gray-500">
+            Tap any link to open in browser
+          </div>
+        )}
       </div>
     </div>
   );
