@@ -14,7 +14,7 @@ import { base, optimism } from "wagmi/chains";
 import { useSession } from "next-auth/react";
 import { createStore } from "mipd";
 import { Label } from "~/components/ui/label";
-import { PROJECT_TITLE, SOCIAL_LINKS } from "~/lib/constants";
+import { PROJECT_TITLE, SOCIAL_LINKS, FARCASTER_PROFILE } from "~/lib/constants";
 
 export default function Frame(
   { title }: { title?: string } = { title: PROJECT_TITLE }
@@ -117,7 +117,16 @@ export default function Frame(
       }}
     >
       <div className="w-[300px] mx-auto py-2 px-2">
-        <h1 className="text-2xl font-bold text-center mb-4">{title}</h1>
+        <h1 className="text-2xl font-bold text-center mb-4">
+          <a 
+            href={FARCASTER_PROFILE} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="hover:underline"
+          >
+            {title}
+          </a>
+        </h1>
         
         <div className="space-y-2">
           {SOCIAL_LINKS.map((link) => (

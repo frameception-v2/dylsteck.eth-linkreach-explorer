@@ -1,6 +1,7 @@
 export const PROJECT_ID = 'linkreach-explorer';
 export const PROJECT_TITLE = "LinkReach Explorer";
 export const PROJECT_DESCRIPTION = "dylsteck.eth's Social Links Frame";
+export const FARCASTER_PROFILE = "https://warpcast.com/dylsteck.eth";
 
 export const SOCIAL_LINKS = [
   {
